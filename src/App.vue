@@ -12,16 +12,19 @@
 				</div>
 			</template>
 		</Layout>
+		<ToTop/>
 	</div>
 </template>
 
 <script>
+import ToTop from '@/components/ToTop';
 import SiteAside from '@/components/SiteAside';
 import Layout from '@/components/Layout';
 export default {
 	components: {
 		Layout,
-		SiteAside
+		SiteAside,
+		ToTop,
 	}
 }
 </script>

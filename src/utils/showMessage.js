@@ -1,4 +1,4 @@
-import getCompRootDom from "@/utils/getCompRootDom";
+import {getCompRootDom} from "@/utils";
 import styles from './showMessage.module.less';
 import Icon from '@/components/Icon';
 export default function (options = {}) {

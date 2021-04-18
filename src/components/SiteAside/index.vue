@@ -1,12 +1,14 @@
 <template>
 	<div class="site-aside-container">
-		<Avatar src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3984801441,3395782865&fm=26&gp=0.jpg" />
-		<h1 class="title">末日铁拳</h1>
-		<Menu />
-		<Contact />
-		<p class="footer">
-			黑ICP备17001719号
-		</p>
+		<template v-if="data">
+			<Avatar :src="data.avatar" />
+			<h1 class="title">{{data.siteTitle}}</h1>
+			<Menu />
+			<Contact />
+			<p class="footer">
+				{{data.icp}}
+			</p>
+		</template>
 	</div>
 </template>
 
@@ -14,12 +16,14 @@
 import Avatar from "@/components/Avatar";
 import Menu from "./Menu";
 import Contact from "./Contact";
+import {mapState} from 'vuex';
 export default {
 	components: {
 		Avatar,
 		Menu,
 		Contact,
 	},
+	computed: mapState('setting',['data']),
 };
 </script>
 
